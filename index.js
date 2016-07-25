@@ -1,5 +1,7 @@
 var fs = require('fs')
+var path = require('path')
 var debug = require('debug')('jwf')
+
 
 module.exports = function (file) {
   var obj = require(file)
@@ -21,7 +23,7 @@ function parse (obj) {
     
     if (fs.existsSync(obj[i]) === true) {
       debug('existsSync ' + i  + ' - ' + obj[i] )
-      result[i] = require(obj[i])
+      result[i] = require(path.join(__dirname, obj[i]))
       // console.log(result[i])
     } else {
       result[i] = obj[i]
