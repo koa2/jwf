@@ -2,9 +2,8 @@ var fs = require('fs')
 var path = require('path')
 var debug = require('debug')('jwf')
 
-
 module.exports = function (file) {
-  var obj = require(file)
+  var obj = require(path.join(__dirname, file))
   
   return parse (obj) ;
 }
@@ -14,15 +13,15 @@ function parse (obj) {
   for(var i in obj){
     debug('result[i] ' + i  + ' - ' + obj[i] )
     if (typeof obj[i] == 'object') {
-      // console.log(obj[i])
-      // console.log(parse (obj[i]))
+      debug(obj[i])
+      debug(parse (obj[i]))
       result[i] = parse (obj[i])
-      // console.log(result)
+      debug(result)
       // break
     }else if (fs.existsSync(obj[i]) === true) {
       debug('existsSync ' + i  + ' - ' + obj[i] )
       result[i] = require(path.join(__dirname, obj[i]))
-      // console.log(result[i])
+      debug(result[i])
     } else {
       result[i] = obj[i]
     }

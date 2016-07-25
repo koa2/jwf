@@ -19,5 +19,8 @@
   "homepage": "https://github.com/i5ting/jwf#readme",
   "dependencies": {
     "debug": "^2.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2"
   }
 }
