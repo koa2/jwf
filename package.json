@@ -4,7 +4,8 @@
   "description": "json with file require",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/ava -v"
+    "test": "./node_modules/.bin/ava -v",
+    "start": "standard index.js"
   },
   "repository": {
     "type": "git",
