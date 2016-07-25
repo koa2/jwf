@@ -14,14 +14,12 @@ function parse (obj) {
   for(var i in obj){
     debug('result[i] ' + i  + ' - ' + obj[i] )
     if (typeof obj[i] == 'object') {
-      console.log(obj[i])
-      console.log(parse (obj[i]))
+      // console.log(obj[i])
+      // console.log(parse (obj[i]))
       result[i] = parse (obj[i])
-      console.log(result)
-      break
-    }
-    
-    if (fs.existsSync(obj[i]) === true) {
+      // console.log(result)
+      // break
+    }else if (fs.existsSync(obj[i]) === true) {
       debug('existsSync ' + i  + ' - ' + obj[i] )
       result[i] = require(path.join(__dirname, obj[i]))
       // console.log(result[i])
