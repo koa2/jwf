@@ -1,0 +1,17 @@
+{
+    "name": "jwf",
+    "version": "1.0.0",
+    "description": "json with file require",
+    "config": {
+        "b": {
+            "a": 1,
+            "b": 2
+        },
+        "c": {
+            "b": {
+                "a": 1,
+                "b": 2
+            }
+        }
+    }
+}
