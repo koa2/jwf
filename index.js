@@ -3,7 +3,10 @@ var path = require('path')
 var debug = require('debug')('jwf')
 
 module.exports = function (file) {
-  var _path = path.join(__dirname, file)
+  // ~/index.js
+  // index.js
+  // ./index.js
+  var _path = file.indexOf('/') === -1 ? path.join(__dirname, file) : file
   var obj = require(_path)
   return parse(obj)
 }
