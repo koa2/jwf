@@ -1,6 +1,6 @@
 {
   "name": "jwf",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "json with file require",
   "main": "index.js",
   "scripts": {
